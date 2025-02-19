@@ -1,0 +1,34 @@
+{
+  "pontuacoes": [
+    {
+      "id": "1",
+      "jogador": "Fred",
+      "pontos": 4
+    },
+    {
+      "id": "2",
+      "jogador": "Rosana",
+      "pontos": 10
+    },
+    {
+      "id": "e038",
+      "jogador": "Lucas",
+      "pontos": 5
+    },
+    {
+      "id": "6a95",
+      "jogador": "Jorge",
+      "pontos": 4
+    },
+    {
+      "id": "1b8a",
+      "jogador": "Maria",
+      "pontos": 4
+    },
+    {
+      "id": "977b",
+      "jogador": "Fabio",
+      "pontos": 1
+    }
+  ]
+}

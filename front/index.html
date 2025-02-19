@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventuras do Capitão Cálculo</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Tela de digitação do nome -->
+        <div class="screen active" id="name-screen">
+            <h1>Aventuras do Capitão Cálculo</h1>
+            <p>Digite seu nome para começar:</p>
+            <input type="text" id="player-name" placeholder="Seu nome aqui" style="padding: 10px; font-size: 1.2em; margin: 10px;">
+            <button class="btn" onclick="startGameWithName()">Começar</button>
+        </div>
+
+        <div class="screen" id="video-screen">
+            <h1>Apresentação</h1>
+            <video width="800"  controls>
+                <source src="./assets/videoInicial.mp4" type="video/mp4">
+               
+                Your browser does not support the video tag.
+            </video>
+            <button class="btn" onclick="switchScreen('start-screen')">Avançar</button>
+            
+        </div>
+
+        <!-- Tela inicial com as operações -->
+        <div class="screen treasure-background" id="start-screen">
+            <h1>Escolha uma operação!</h1>
+            <button class="btn" onclick="startGame('addition')">Adição</button>
+            <button class="btn" onclick="startGame('subtraction')">Subtração</button>
+            <button class="btn" onclick="startGame('multiplication')">Multiplicação</button>
+            <button class="btn" onclick="startGame('division')">Divisão</button>
+        </div>
+
+        
+
+        <!-- Tela de explicação da operação -->
+        <div class="screen treasure-background" id="operation-explanation-screen">
+            <p id="operation-definition">Aqui aparecerá a explicação da operação escolhida.</p>
+            <button class="btn" onclick="startGameAfterExplanation()">Entendi, Vamos Jogar!</button>
+        </div>
+
+        <!-- Tela de jogo -->
+        <div class="screen" id="game-screen">
+            <h2>Ilha dos Desafios</h2>
+            <div class="question" id="question">Pergunta aqui</div>
+            <div class="answers" id="answers"></div>
+        </div>
+
+        <!-- Tela de final -->
+        <div class="screen" id="end-screen">
+            <h1 id="congratulations-message"></h1>
+            
+            <div id="result-table">
+                <p id="final-message"></p>
+            </div>
+            <button class="btn" onclick="backToStart()">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <!-- Áudio -->
+    <audio id="music" loop controls>
+        <source src="./assets/audiopirata.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="correct-sound"   controls>
+        <source src="./assets/musicaAcerto.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="wrong-sound"  controls>
+        <source src="./assets/musicaErro.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Botão de controle de música -->
+    <button id="music-toggle" onclick="toggleMusic()">Ligar/Desligar Música</button>
+
+    <script src="./js/script.js">
+        
+    </script>
+</body>
+</html>
