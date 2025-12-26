@@ -1,4 +1,4 @@
-name: node package manager install nodejs-5
+name: node package manager install nodejs-6
 
 on:
   push:
